@@ -16,3 +16,7 @@ publish: # запуск отладки публикаци аргумент пр�
 
 package-install: # установка пакета из операционной системы - запускать из корневой директории проекта
 	python3 -m pip install --user dist/*.whl
+
+
+test-coverage:
+	poetry run pytest --cov=hexlet_python_package --cov-report xml
