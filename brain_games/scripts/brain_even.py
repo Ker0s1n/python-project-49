@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
-from brain_games.scripts.brain_games import main as brain_games
 from random import randrange
 import prompt
 
-brain_games()
-
 
 def main():
+    name = prompt.string('May I have your name? ')
+    print(f'Hello, {name}')
     print('Answer "yes" if the number is even, otherwise answer "no".')
     count = 0
     while count < 3:
         questing_number = randrange(100)
         print(f'Question: {questing_number}')
-        answer = prompt.string('Your answer: ')
-        correct_answer = 'yes' if questing_number % 2 == 0 else 'no'
-        rule_1 = questing_number % 2 == 0 and answer == 'no'
-        rule_2 = questing_number % 2 != 0 and answer == 'yes'
-        rule_3 = answer not in ('no', 'yes')
+        answ = prompt.string('Your answer: ')
+        corr_answ = 'yes' if questing_number % 2 == 0 else 'no'
+        rule_1 = questing_number % 2 == 0 and answ == 'no'
+        rule_2 = questing_number % 2 != 0 and answ == 'yes'
+        rule_3 = answ not in ('no', 'yes')
         if rule_1 or rule_2 or rule_3:
-            print(f'\'{answer}\' is wrong answer ;(. Correct answer \'{correct_answer}\'')
+            print(f"'{answ}' is wrong answer ;(. Correct answer '{corr_answ}'")
             count = 0
         else:
             print('Correct!')
