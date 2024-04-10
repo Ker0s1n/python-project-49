@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "my first project"
 authors = ["Дмитрий Чачимин <chachimin@gmail.com>"]
 readme = "README.md"
+repository = "https://github.com/Ker0s1n/python-project-49.git"
 packages = [
     { include = "brain_games" },
 ]

@@ -6,3 +6,21 @@
 [![asciicast](https://asciinema.org/a/wNO4rG4KwnuGcLR1vX2W455jK.svg)](https://asciinema.org/a/wNO4rG4KwnuGcLR1vX2W455jK)
 [![asciicast](https://asciinema.org/a/5jZvRfHW956ks7xrWIyRSG5y1.svg)](https://asciinema.org/a/5jZvRfHW956ks7xrWIyRSG5y1)
 [![asciicast](https://asciinema.org/a/DpZ5AXVKOjib4F8WHPKENSpah.svg)](https://asciinema.org/a/DpZ5AXVKOjib4F8WHPKENSpah)
+
+
+Проект "Игры разума" - первый учебный проект
+
+
+Для установки введите следующие команды:
+
+make package-install: # установка пакета из операционной системы - запускать из корневой директории проекта
+make build: # запуск сборки пакета и подтверждения правильности настройки
+
+
+Для запуска игры введите следующие команды:
+
+brain-even: # запуск Игра: «Проверка на чётность»
+brain-calc: # запуск Игра: «Калькулятор»
+brain-gcd: # запуск Игра: «Наибольший общий делитель (НОД)»
+brain-progression: # запуск Игра: «Арифметическая прогрессия»
+brain-prime: # запуск Игра: «Простое ли число?»
