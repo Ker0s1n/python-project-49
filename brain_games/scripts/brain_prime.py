@@ -7,23 +7,21 @@ def main():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    print('What number is missing in the progression?')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     count = 0
     while count < 3:
-        step = randint(1, 10)
-        start = randint(0, 20)
-        length = randint(5, 10)
-        list = [start]
-        for i in range(length):
-            list.append(start + step)
-            start += step
-        correct = randint(0, len(list) - 1)
-        cor_answ = list[correct]
-        list[correct] = '..'
-        list = ' '.join(str(elem) for elem in list)
-        print(f'Question: {list}')
+        number = randint(0, 101)
+        if number < 2:
+            cor_answ = 'no'
+        for i in range(2, (number // 2) + 1):
+            if number % i == 0:
+                cor_answ = 'no'
+                break
+            else:
+                cor_answ = 'yes'
+        print(f'Question: {number}')
         answ = prompt.string('Your answer: ')
-        if int(answ) == int(cor_answ):
+        if answ == cor_answ:
             print('Correct!')
             count += 1
         else:
