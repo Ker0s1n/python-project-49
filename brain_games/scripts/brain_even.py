@@ -17,14 +17,7 @@ def is_even(num):
 
 
 def main():
-<<<<<<< HEAD
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-=======
     name = welcome_user()
->>>>>>> fde2fac (update brain_even.py)
     count = 0
     while count < 3:
         questing_number = randrange(100)
