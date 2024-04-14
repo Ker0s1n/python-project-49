@@ -3,46 +3,46 @@ from random import randint
 import prompt
 
 
-task_text = 'What number is missing in the progression?'
+TASK_TEXT = 'What number is missing in the progression?'
 
 
 def get_user_name():
     print('Welcome to the Brain Games!')
-    user_name = prompt.string('May I have your name? ')
-    print(f'Hello, {user_name}!')
-    print(task_text)
-    return user_name
+    USER_NAME = prompt.string('May I have your name? ')
+    print(f'Hello, {USER_NAME}!')
+    print(TASK_TEXT)
+    return USER_NAME
 
 
 def generate_question_and_correct_answer():
     gen_start_progression, gen_step_progression = randint(0, 20), randint(1, 10)
     length_progression = randint(5, 10)
-    progression = [gen_start_progression]
+    PROGRESSION = [gen_start_progression]
     for i in range(length_progression):
-        progression.append(gen_start_progression + gen_step_progression)
+        PROGRESSION.append(gen_start_progression + gen_step_progression)
         gen_start_progression += gen_step_progression
-    gen_correct_answer_index = randint(0, len(progression) - 1)
-    correct_answ = progression[gen_correct_answer_index]
-    progression[gen_correct_answer_index] = '..'
-    question = ' '.join(str(elem) for elem in progression)
-    return question, str(correct_answ)
+    gen_correct_answer_index = randint(0, len(PROGRESSION) - 1)
+    CORRECT_ANSWER = PROGRESSION[gen_correct_answer_index]
+    PROGRESSION[gen_correct_answer_index] = '..'
+    QUESTION = ' '.join(str(ELEM) for ELEM in PROGRESSION)
+    return QUESTION, str(CORRECT_ANSWER)
 
 
-def get_user_answer(question):
-    print(f'Question: {question}')
-    get_answer = prompt.string('Your answer: ')
-    return get_answer
+def get_user_answer(QUESTION):
+    print(f'Question: {QUESTION}')
+    GET_ANSWER = prompt.string('Your answer: ')
+    return GET_ANSWER
 
 
 def main():
     user_name = get_user_name()
-    count = 0
-    while count < 3:
+    COUNT = 0
+    while COUNT < 3:
         question, cor_ans = generate_question_and_correct_answer()
         ans = get_user_answer(question)
         if ans == cor_ans:
             print('Correct!')
-            count += 1
+            COUNT += 1
         else:
             print(f"'{ans}' is wrong answer ;(. Correct answer was '{cor_ans}'")
             return print(f'Let\'s try again, {user_name}!')

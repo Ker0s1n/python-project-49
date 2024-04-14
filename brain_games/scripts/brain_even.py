@@ -3,19 +3,19 @@ from random import randint
 import prompt
 
 
-task_text = 'Answer "yes" if the number is even, otherwise answer "no".'
+TASK_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def get_user_name():
     print('Welcome to the Brain Games!')
-    user_name = prompt.string('May I have your name? ')
-    print(f'Hello, {user_name}!')
-    print(task_text)
-    return user_name
+    USER_NAME = prompt.string('May I have your name? ')
+    print(f'Hello, {USER_NAME}!')
+    print(TASK_TEXT)
+    return USER_NAME
 
 
-def is_even(num):
-    if num % 2 == 0:
+def is_even(NUM):
+    if NUM % 2 == 0:
         return 'yes'
     else:
         return 'no'
@@ -23,25 +23,25 @@ def is_even(num):
 
 def generate_question_and_correct_answer():
     generate_number_for_question = randint(0, 100)
-    correct_answer = is_even(generate_number_for_question)
-    return generate_number_for_question, correct_answer
+    CORRECT_ANSWER = is_even(generate_number_for_question)
+    return generate_number_for_question, CORRECT_ANSWER
 
 
-def get_user_answer(question):
-    print(f'Question: {question}')
-    get_answer = prompt.string('Your answer: ')
-    return get_answer
+def get_user_answer(QUESTION):
+    print(f'Question: {QUESTION}')
+    GET_ANSWER = prompt.string('Your answer: ')
+    return GET_ANSWER
 
 
 def main():
     user_name = get_user_name()
-    count = 0
-    while count < 3:
+    COUNT = 0
+    while COUNT < 3:
         question, cor_ans = generate_question_and_correct_answer()
         ans = get_user_answer(question)
         if ans == cor_ans:
             print('Correct!')
-            count += 1
+            COUNT += 1
         else:
             print(f"'{ans}' is wrong answer ;(. Correct answer was '{cor_ans}'")
             return print(f'Let\'s try again, {user_name}!')

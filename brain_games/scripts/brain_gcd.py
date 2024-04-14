@@ -3,48 +3,48 @@ from random import randint
 import prompt
 
 
-task_text = 'Find the greatest common divisor of given numbers.'
+TASK_TEXT = 'Find the greatest common divisor of given numbers.'
 
 
 def get_user_name():
     print('Welcome to the Brain Games!')
-    user_name = prompt.string('May I have your name? ')
-    print(f'Hello, {user_name}!')
-    print(task_text)
-    return user_name
+    USER_NAME = prompt.string('May I have your name? ')
+    print(f'Hello, {USER_NAME}!')
+    print(TASK_TEXT)
+    return USER_NAME
 
 
 def generate_question_and_correct_answer():
-    gen_operand_1, gen_operand_2 = randint(-100, 100), randint(-100, 100)
-    quest = str(f'{gen_operand_1} {gen_operand_2}')
-    if gen_operand_1 == 0:
-        gen_operand_1 = abs(gen_operand_2)
-    if gen_operand_2 == 0 or abs(gen_operand_1) == abs(gen_operand_2):
-        gen_operand_1 = abs(gen_operand_1)
-    while gen_operand_1 != gen_operand_2:
-        largest_of_operands = max(abs(gen_operand_1), abs(gen_operand_2))
-        smallest_of_operands = min(abs(gen_operand_1), abs(gen_operand_2))
-        gen_operand_1 = largest_of_operands - smallest_of_operands
-        gen_operand_2 = smallest_of_operands
-    correct_answer = str(gen_operand_1)
-    return quest, correct_answer
+    gen_operand1, gen_operand2 = randint(-100, 100), randint(-100, 100)
+    QUESTION = str(f'{gen_operand1} {gen_operand2}')
+    if gen_operand1 == 0:
+        gen_operand1 = abs(gen_operand2)
+    if gen_operand2 == 0 or abs(gen_operand1) == abs(gen_operand2):
+        gen_operand1 = abs(gen_operand1)
+    while gen_operand1 != gen_operand2:
+        LARGEST_OF_OPERANDS = max(abs(gen_operand1), abs(gen_operand2))
+        SMALLEST_OF_OPERANDS = min(abs(gen_operand1), abs(gen_operand2))
+        gen_operand1 = LARGEST_OF_OPERANDS - SMALLEST_OF_OPERANDS
+        gen_operand2 = SMALLEST_OF_OPERANDS
+    CORRECT_ANSWER = str(gen_operand1)
+    return QUESTION, CORRECT_ANSWER
 
 
-def get_user_answer(question):
-    print(f'Question: {question}')
-    get_answer = prompt.string('Your answer: ')
-    return get_answer
+def get_user_answer(QUESTION):
+    print(f'Question: {QUESTION}')
+    GET_ANSWER = prompt.string('Your answer: ')
+    return GET_ANSWER
 
 
 def main():
     user_name = get_user_name()
-    count = 0
-    while count < 3:
+    COUNT = 0
+    while COUNT < 3:
         question, cor_ans = generate_question_and_correct_answer()
         ans = get_user_answer(question)
         if ans == cor_ans:
             print('Correct!')
-            count += 1
+            COUNT += 1
         else:
             print(f"'{ans}' is wrong answer ;(. Correct answer was '{cor_ans}'")
             return print(f'Let\'s try again, {user_name}!')
