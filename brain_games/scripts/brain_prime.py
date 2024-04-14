@@ -10,7 +10,7 @@ def is_prime(NUMBER):
     if NUMBER < 2:
         return 'no'
     for i in range(2, NUMBER // 2 + 1):
-        while NUMBER % i != 0:
+        if NUMBER % i == 0:
             return 'no'
     else:
         return 'yes'
