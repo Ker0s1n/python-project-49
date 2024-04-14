@@ -3,33 +3,50 @@ from random import randint, choice
 import prompt
 
 
-def main():
+task_text = 'What is the result of the expression?'
+
+
+def get_user_name():
     print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    print('What is the result of the expression?')
+    user_name = prompt.string('May I have your name? ')
+    print(f'Hello, {user_name}!')
+    print(task_text)
+    return user_name
+
+
+def generate_question_and_correct_answer():
+    gen_operand_1, gen_operand_2 = randint(0, 25), randint(0, 25)
+    gen_actions_for_operands = choice(['+', '-', '*'])
+    match gen_actions_for_operands:
+        case '+':
+            correct_answer = gen_operand_1 + gen_operand_2
+        case '-':
+            correct_answer = gen_operand_1 - gen_operand_2
+        case '*':
+            correct_answer = gen_operand_1 * gen_operand_2
+    quest = str(f'{gen_operand_1} {gen_actions_for_operands} {gen_operand_2}')
+    return quest, str(correct_answer)
+
+
+def get_user_answer(question):
+    print(f'Question: {question}')
+    get_answer = prompt.string('Your answer: ')
+    return get_answer
+
+
+def main():
+    user_name = get_user_name()
     count = 0
     while count < 3:
-        oper_1 = randint(0, 25)
-        oper_2 = randint(0, 25)
-        operation = choice(['+', '-', '*'])
-        match operation:
-            case '+':
-                cor_answ = oper_1 + oper_2
-            case '-':
-                cor_answ = oper_1 - oper_2
-            case '*':
-                cor_answ = oper_1 * oper_2
-        print(f'Question: {oper_1} {operation} {oper_2}')
-        answ = prompt.string('Your answer: ')
-        if int(answ) == cor_answ:
+        question, cor_ans = generate_question_and_correct_answer()
+        ans = get_user_answer(question)
+        if ans == cor_ans:
             print('Correct!')
             count += 1
         else:
-            print(f"'{answ}'is wrong answer ;(. Correct answer was: '{cor_answ}'.")
-            print(f"Let`s try again, {name}!")
-            count = 0
-    print(f"Congratulations, {name}!")
+            print(f"'{ans}' is wrong answer ;(. Correct answer was '{cor_ans}'")
+            return print(f'Let\'s try again, {user_name}!')
+    print(f'Congratulations, {user_name}!')
 
 
 if __name__ == '__main__':
