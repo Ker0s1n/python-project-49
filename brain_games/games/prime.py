@@ -13,9 +13,9 @@ def is_prime(number):
             return False
     else:
         return True
-    
 
-def generate_question_and_correct_answer():
+
+def generate_question_and_answer():
     questing_number = randint(0, 101)
     correct_answer = 'yes' if is_prime(questing_number) else 'no'
     return questing_number, str(correct_answer)

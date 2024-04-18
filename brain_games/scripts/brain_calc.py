@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from brain_games.games.calc import TASK_TEXT, generate_question_and_correct_answer
+from brain_games.games.calc import TASK_TEXT, generate_question_and_answer
 import prompt
 
 
@@ -21,7 +21,7 @@ def main():
     user_name = get_user_name()
     COUNT = 0
     while COUNT < 3:
-        question, cor_ans = generate_question_and_correct_answer()
+        question, cor_ans = generate_question_and_answer()
         ans = get_user_answer(question)
         if ans == cor_ans:
             print('Correct!')

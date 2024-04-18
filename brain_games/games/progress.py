@@ -5,7 +5,7 @@ from random import randint
 TASK_TEXT = 'What number is missing in the progression?'
 
 
-def generate_question_and_correct_answer():
+def generate_question_and_answer():
     gen_start_progression, gen_step_progression = randint(0, 20), randint(1, 10)
     length_progression = randint(5, 10)
     progression = [gen_start_progression]
