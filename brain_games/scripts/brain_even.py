@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
-from random import randint
+from brain_games.games.even import TASK_TEXT, generate_question_and_correct_answer
 import prompt
-
-
-TASK_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def get_user_name():
@@ -12,19 +9,6 @@ def get_user_name():
     print(f'Hello, {USER_NAME}!')
     print(TASK_TEXT)
     return USER_NAME
-
-
-def is_even(NUM):
-    if NUM % 2 == 0:
-        return 'yes'
-    else:
-        return 'no'
-
-
-def generate_question_and_correct_answer():
-    generate_number_for_question = randint(0, 100)
-    CORRECT_ANSWER = is_even(generate_number_for_question)
-    return generate_number_for_question, CORRECT_ANSWER
 
 
 def get_user_answer(QUESTION):
@@ -44,7 +28,8 @@ def main():
             COUNT += 1
         else:
             print(f"'{ans}' is wrong answer ;(. Correct answer was '{cor_ans}'")
-            return print(f'Let\'s try again, {user_name}!')
+            print(f'Let\'s try again, {user_name}!')
+            return
     print(f'Congratulations, {user_name}!')
 
 

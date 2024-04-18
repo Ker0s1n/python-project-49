@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
-from random import randint
+from brain_games.games.gcd import TASK_TEXT, generate_question_and_correct_answer
 import prompt
-
-
-TASK_TEXT = 'Find the greatest common divisor of given numbers.'
 
 
 def get_user_name():
@@ -12,22 +9,6 @@ def get_user_name():
     print(f'Hello, {USER_NAME}!')
     print(TASK_TEXT)
     return USER_NAME
-
-
-def generate_question_and_correct_answer():
-    gen_operand1, gen_operand2 = randint(-100, 100), randint(-100, 100)
-    QUESTION = str(f'{gen_operand1} {gen_operand2}')
-    if gen_operand1 == 0:
-        gen_operand1 = abs(gen_operand2)
-    if gen_operand2 == 0 or abs(gen_operand1) == abs(gen_operand2):
-        gen_operand1 = abs(gen_operand1)
-    while gen_operand1 != gen_operand2:
-        LARGEST_OF_OPERANDS = max(abs(gen_operand1), abs(gen_operand2))
-        SMALLEST_OF_OPERANDS = min(abs(gen_operand1), abs(gen_operand2))
-        gen_operand1 = LARGEST_OF_OPERANDS - SMALLEST_OF_OPERANDS
-        gen_operand2 = SMALLEST_OF_OPERANDS
-    CORRECT_ANSWER = str(gen_operand1)
-    return QUESTION, CORRECT_ANSWER
 
 
 def get_user_answer(QUESTION):
@@ -47,7 +28,8 @@ def main():
             COUNT += 1
         else:
             print(f"'{ans}' is wrong answer ;(. Correct answer was '{cor_ans}'")
-            return print(f'Let\'s try again, {user_name}!')
+            print(f'Let\'s try again, {user_name}!')
+            return
     print(f'Congratulations, {user_name}!')
 
 

@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
-from random import randint, choice
+from brain_games.games.calc import TASK_TEXT, generate_question_and_correct_answer
 import prompt
-
-
-TASK_TEXT = 'What is the result of the expression?'
 
 
 def get_user_name():
@@ -12,20 +9,6 @@ def get_user_name():
     print(f'Hello, {USER_NAME}!')
     print(TASK_TEXT)
     return USER_NAME
-
-
-def generate_question_and_correct_answer():
-    gen_operand1, gen_operand2 = randint(0, 25), randint(0, 25)
-    gen_actions_for_operand = choice(['+', '-', '*'])
-    match gen_actions_for_operand:
-        case '+':
-            CORRECT_ANSWER = gen_operand1 + gen_operand2
-        case '-':
-            CORRECT_ANSWER = gen_operand1 - gen_operand2
-        case '*':
-            CORRECT_ANSWER = gen_operand1 * gen_operand2
-    QUESTION = str(f'{gen_operand1} {gen_actions_for_operand} {gen_operand2}')
-    return QUESTION, str(CORRECT_ANSWER)
 
 
 def get_user_answer(QUESTION):
@@ -45,7 +28,8 @@ def main():
             COUNT += 1
         else:
             print(f"'{ans}' is wrong answer ;(. Correct answer was '{cor_ans}'")
-            return print(f'Let\'s try again, {user_name}!')
+            print(f'Let\'s try again, {user_name}!')
+            return
     print(f'Congratulations, {user_name}!')
 
 
