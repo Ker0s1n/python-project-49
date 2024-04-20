@@ -1,18 +1,18 @@
-install: # установка poetry при первом клонировании или после изменения зависимостей
+install: # installing poetry on the first clone or after changing dependencies
 	poetry install
 
 
-brain-games: # запуск модуля brain_games.py из директории brain_games/scripts/
+brain-games: # launching the module brain_games.py from the brain_games/scripts directory/
 	poetry run brain-games
 
 
-build: # запуск сборки пакета и подтверждения правильности настройки
+build: # starting the package build and confirming the correct configuration
 	poetry build
 
 
-publish: # запуск отладки публикаци аргумент применяется, чтобы не добавлять пакет в каталог PyPI
+publish: # start debugging the publish argument is used to avoid adding the package to the PyPI directory
 	poetry publish --dry-run
 
 
-package-install: # установка пакета из операционной системы - запускать из корневой директории проекта
+package-install: # installing the package from the operating system - run from the root directory of the project
 	python3 -m pip install --user dist/*.whl

@@ -3,6 +3,8 @@ from random import randint
 
 
 TASK_TEXT = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+begin_range_question = 0
+end_range_question = 101
 
 
 def is_prime(number):
@@ -16,6 +18,6 @@ def is_prime(number):
 
 
 def generate_question_and_answer():
-    questing_number = randint(0, 101)
+    questing_number = randint(begin_range_question, end_range_question)
     correct_answer = 'yes' if is_prime(questing_number) else 'no'
     return questing_number, str(correct_answer)

@@ -6,19 +6,19 @@
 [![asciicast](https://asciinema.org/a/wXddThBR7KZbtW9zG6B4Gtpa6.svg)](https://asciinema.org/a/wXddThBR7KZbtW9zG6B4Gtpa6)
 
 
-Проект "Игры разума" - первый учебный проект
+The Mind Games project is the first educational project
 
 
-Для установки введите следующие команды:
+To install, enter the following commands:
 
-make package-install: # установка пакета из операционной системы - запускать из корневой директории проекта
-make build: # запуск сборки пакета и подтверждения правильности настройки
+make package-install: # install the package from the operating system - run from the root directory of the project
+make build: # starting the package build and confirming the correct configuration
 
 
-Для запуска игры введите следующие команды:
+To start the game, enter the following commands:
 
-brain-even: # запуск Игра: «Проверка на чётность»
-brain-calc: # запуск Игра: «Калькулятор»
-brain-gcd: # запуск Игра: «Наибольший общий делитель (НОД)»
-brain-progression: # запуск Игра: «Арифметическая прогрессия»
-brain-prime: # запуск Игра: «Простое ли число?»
+brain-even: # Running Game: "Parity Check"
+brain-calc: # Launch Game: "Calculator"
+brain-gcd: # Running Game: "Greatest Common Divisor (GCD)"
+brain-progression: # Running Game: "Arithmetic Progression"
+brain-prime: # Launch Game: "Is a prime number?"
