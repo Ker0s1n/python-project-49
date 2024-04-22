@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
 from random import randint
 
 
 TASK_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".'
-begin_range = 0
-end_range = 100
+BEGIN_RANGE = 0
+END_RANGE = 100
 
 
 def is_even(number):
@@ -12,6 +11,6 @@ def is_even(number):
 
 
 def generate_question_and_answer():
-    generate_number_for_question = randint(begin_range, end_range)
-    correct_answer = 'yes' if is_even(generate_number_for_question) else 'no'
-    return generate_number_for_question, correct_answer
+    number_for_question = randint(BEGIN_RANGE, END_RANGE)
+    correct_answer = 'yes' if is_even(number_for_question) else 'no'
+    return number_for_question, correct_answer

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-from brain_games.games.progress import TASK_TEXT, generate_question_and_answer
-from brain_games.scripts.game_logic import game_logic
+from brain_games.games import progress
+from brain_games.game_logic import play_game
 
 
 def main():
-    game_logic(TASK_TEXT, generate_question_and_answer)
+    play_game(progress)
 
 
 if __name__ == '__main__':
